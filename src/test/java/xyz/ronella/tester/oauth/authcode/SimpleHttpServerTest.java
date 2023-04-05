@@ -37,7 +37,7 @@ class SimpleHttpServerTest {
     @Order(10)
     public void retrieveAllPersons() throws IOException, InterruptedException {
         final var client = HttpClient.newHttpClient();
-        final var request = HttpRequest.newBuilder(URI.create("http://localhost:8080/person"))
+        final var request = HttpRequest.newBuilder(URI.create("http://localhost:9010/person"))
                 .GET()
                 .build();
         final var response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -48,7 +48,7 @@ class SimpleHttpServerTest {
     @Order(20)
     public void retrieveAPerson() throws IOException, InterruptedException {
         final var client = HttpClient.newHttpClient();
-        final var request = HttpRequest.newBuilder(URI.create("http://localhost:8080/person/1"))
+        final var request = HttpRequest.newBuilder(URI.create("http://localhost:9010/person/1"))
                 .GET()
                 .build();
         final var response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -59,7 +59,7 @@ class SimpleHttpServerTest {
     @Order(30)
     public void createAPerson() throws IOException, InterruptedException {
         final var client = HttpClient.newHttpClient();
-        final var request = HttpRequest.newBuilder(URI.create("http://localhost:8080/person"))
+        final var request = HttpRequest.newBuilder(URI.create("http://localhost:9010/person"))
                 .header("Content-Type", ContentType.APPLICATION_JSON.toString())
                 .POST(HttpRequest.BodyPublishers.ofString("""
                     {
@@ -78,7 +78,7 @@ class SimpleHttpServerTest {
     @Order(40)
     public void updateAPerson() throws IOException, InterruptedException {
         final var client = HttpClient.newHttpClient();
-        final var request = HttpRequest.newBuilder(URI.create("http://localhost:8080/person"))
+        final var request = HttpRequest.newBuilder(URI.create("http://localhost:9010/person"))
                 .header("Content-Type", ContentType.APPLICATION_JSON.toString())
                 .PUT(HttpRequest.BodyPublishers.ofString("""
                     {
@@ -98,7 +98,7 @@ class SimpleHttpServerTest {
     @Order(50)
     public void deleteAPerson() throws IOException, InterruptedException {
         final var client = HttpClient.newHttpClient();
-        final var request = HttpRequest.newBuilder(URI.create("http://localhost:8080/person/3"))
+        final var request = HttpRequest.newBuilder(URI.create("http://localhost:9010/person/3"))
                 .DELETE()
                 .build();
         final var response = client.send(request, HttpResponse.BodyHandlers.discarding());
@@ -109,7 +109,7 @@ class SimpleHttpServerTest {
     @Order(60)
     public void updateAPersonNonExisting() throws IOException, InterruptedException {
         final var client = HttpClient.newHttpClient();
-        final var request = HttpRequest.newBuilder(URI.create("http://localhost:8080/person"))
+        final var request = HttpRequest.newBuilder(URI.create("http://localhost:9010/person"))
                 .header("Content-Type", ContentType.APPLICATION_JSON.toString())
                 .PUT(HttpRequest.BodyPublishers.ofString("""
                     {
@@ -127,7 +127,7 @@ class SimpleHttpServerTest {
     @Order(70)
     public void deleteAPersonNonExisting() throws IOException, InterruptedException {
         final var client = HttpClient.newHttpClient();
-        final var request = HttpRequest.newBuilder(URI.create("http://localhost:8080/person/3"))
+        final var request = HttpRequest.newBuilder(URI.create("http://localhost:9010/person/3"))
                 .DELETE()
                 .build();
         final var response = client.send(request, HttpResponse.BodyHandlers.discarding());
