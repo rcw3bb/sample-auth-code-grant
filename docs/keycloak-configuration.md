@@ -1,5 +1,7 @@
 # Keycloak – Authorization Code Grant Type - Configuration
 
+This configuration procedure is specific to **OAuth2 Authorization Code Grant Sample Implementation**. This is to make the implementation works and anyone can play with it. 
+
 ## Pre-requisite
 
 * Keycloak v21.0[^1]
@@ -158,5 +160,7 @@ The **client secret** is needed when requesting for **authorization token** and 
 5. **Click** the **Copy icon** *(alternatively, you can display the secret by clicking the eye icon.)*.
 
    ![](images/client-secret.png)
+
+[Back](../README.md)
 
 [^1]: https://www.keycloak.org/archive/downloads-21.0.0.html
