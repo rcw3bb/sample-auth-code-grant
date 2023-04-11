@@ -6,7 +6,7 @@
  */
 open module xyz.ronella.tester.oauth.authcode {
     requires static lombok;
-    requires static java.net.http;
+    requires java.net.http;
 
     requires com.fasterxml.jackson.databind;
     requires jdk.httpserver;
@@ -15,6 +15,7 @@ open module xyz.ronella.tester.oauth.authcode {
     requires xyz.ronella.logging.logger.plus;
 
     requires com.google.guice;
+    requires com.google.gson;
     requires org.slf4j;
     requires org.apache.logging.log4j;
 

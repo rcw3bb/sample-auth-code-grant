@@ -7,12 +7,14 @@ import xyz.ronella.logging.LoggerPlus;
 import xyz.ronella.tester.oauth.authcode.commons.ContentType;
 import xyz.ronella.tester.oauth.authcode.commons.Method;
 import xyz.ronella.tester.oauth.authcode.commons.ResponseStatus;
+import xyz.ronella.trivial.handy.RegExMatcher;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.HttpCookie;
 import java.net.URI;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -147,6 +149,84 @@ public class SimpleHttpExchange {
                 throw new RuntimeException(ioe);
             }
         }
+    }
+
+    public void redirect(final String url, final String ... cookies) {
+        final var headers = exchange.getResponseHeaders();
+        headers.set("Location", url);
+        Arrays.stream(cookies).toList().forEach(___cookie -> {
+            headers.add("Set-Cookie", ___cookie);
+        });
+        try {
+            exchange.sendResponseHeaders(302, -1);
+        } catch (IOException ioe) {
+            throw new RuntimeException(ioe);
+        }
+    }
+
+    private Map<String, List<String>> parseQuery(String query) {
+        final var queryParams = new HashMap<String, List<String>>();
+
+        if (query != null) {
+            final var pairs = query.split("&");
+
+            for (String pair : pairs) {
+                final var idx = pair.indexOf("=");
+                final var key = idx > 0 ? pair.substring(0, idx) : pair;
+                final var value = idx > 0 && pair.length() > idx + 1 ? pair.substring(idx + 1) : null;
+
+                if (!queryParams.containsKey(key)) {
+                    queryParams.put(key, new ArrayList<>());
+                }
+
+                if (value != null) {
+                    queryParams.get(key).add(value);
+                }
+            }
+        }
+
+        return queryParams;
+    }
+
+    public Map<String, List<String>> getRequestParameters() {
+        final var queryString = exchange.getRequestURI().getQuery();
+        return parseQuery(queryString);
+    }
+
+    public List<String> getRequestParameters(final String parameter) {
+        final var requestParam = getRequestParameters();
+        return requestParam.get(parameter);
+    }
+
+    public String getRequestParameter(final String parameter) {
+        final var parameters = getRequestParameters(parameter);
+        return parameters.isEmpty() ? null : parameters.get(0);
+    }
+
+    public void setAttribute(final String name, final Object value) {
+        exchange.setAttribute(name, value);
+    }
+
+    public Object getAttribute(final String name) {
+        return exchange.getAttribute(name);
+    }
+
+    public String getStringAttribute(final String name) {
+        return (String) getAttribute(name);
+    }
+
+    public Optional<HttpCookie> getCookie(final String cookie) {
+        final var cookies = new ArrayList<HttpCookie>();
+        final var optRawCookies = Optional.ofNullable(exchange.getRequestHeaders().get("Cookie"));
+
+        optRawCookies.ifPresent(___cookiesString -> {
+            RegExMatcher.find("\\[(.*)\\]", ___cookiesString.toString(), ___matcher -> {
+                final var splittedCookies=___matcher.group(1).split(";");
+                Arrays.stream(splittedCookies).map(___cookie -> HttpCookie.parse(___cookie).get(0)).forEach(cookies::add);
+            });
+        });
+
+        return cookies.stream().filter(___cookie -> cookie.equals(___cookie.getName())).findFirst();
     }
 
 }

@@ -59,4 +59,46 @@ final public class AppConfig {
     public String getBaseURL() {
         return prop.getString("base.url").trim();
     }
+
+    /**
+     * Reads the value of the auth.url.
+     * @return The value of the auth.url.
+     */
+    public String getAuthURL() {
+        return prop.getString("auth.url").trim();
+    }
+
+    /**
+     * Reads the value of the token.url.
+     * @return The value of the token.url.
+     */
+    public String getTokenURL() {
+        return prop.getString("token.url").trim();
+    }
+
+    /**
+     * Reads the value of the client.id.
+     * @return The value of the client.id.
+     */
+    public String getClientId() {
+        return prop.getString("client.id").trim();
+    }
+
+    /**
+     * Reads the value of the redirect.url.
+     * @return The value of the redirect.url.
+     */
+    public String getRedirectURL() {
+        return prop.getString("redirect.url").trim();
+    }
+
+    /**
+     * Reads the value of the client.secret.
+     * @return The value of the client.secret.
+     */
+    public String getClientSecret() {
+        return prop.getString("client.secret").trim();
+    }
+
+
 }

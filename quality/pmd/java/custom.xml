@@ -10,8 +10,7 @@
     <exclude-pattern>.*/SimpleJson\.java</exclude-pattern>
     <exclude-pattern>.*/SimpleHttpServer\.java</exclude-pattern>
     <exclude-pattern>.*/SimpleHttpExchange\.java</exclude-pattern>
-    <exclude-pattern>.*/PersonServiceImpl\.java</exclude-pattern>
-    <exclude-pattern>.*/AbstractPersonResource\.java</exclude-pattern>
+    <exclude-pattern>.*/AbstractAppResource\.java</exclude-pattern>
     <exclude-pattern>.*/AppConfig\.java</exclude-pattern>
 
     <rule ref="category/java/design.xml/CyclomaticComplexity" />

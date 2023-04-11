@@ -4,7 +4,7 @@ import com.sun.net.httpserver.HttpServer;
 
 import xyz.ronella.tester.oauth.authcode.commons.ResponseStatus;
 import xyz.ronella.tester.oauth.authcode.config.AppConfig;
-import xyz.ronella.tester.oauth.authcode.controller.impl.PersonResources;
+import xyz.ronella.tester.oauth.authcode.controller.impl.AppResources;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -29,7 +29,7 @@ final public class SimpleHttpServer {
 
         context.setHandler(___exchange -> {
             final var simpleExchange = new SimpleHttpExchange(___exchange);
-            final var resource = PersonResources.createResource(simpleExchange);
+            final var resource = AppResources.createResource(simpleExchange);
 
             resource.ifPresentOrElse(___resource -> resource.get().process(simpleExchange),
                     () -> simpleExchange.sendResponseCode(ResponseStatus.NO_CONTENT));

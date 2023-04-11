@@ -5,7 +5,7 @@ import com.google.inject.name.Named;
 
 import org.slf4j.LoggerFactory;
 import xyz.ronella.logging.LoggerPlus;
-import xyz.ronella.tester.oauth.authcode.config.PersonModule;
+import xyz.ronella.tester.oauth.authcode.config.AppModule;
 import xyz.ronella.tester.oauth.authcode.controller.IResource;
 import xyz.ronella.tester.oauth.authcode.controller.IResources;
 import xyz.ronella.tester.oauth.authcode.wrapper.SimpleHttpExchange;
@@ -19,23 +19,23 @@ import java.util.Set;
  * @author Ron Webb
  * @since 1.0.0
  */
-public class PersonResources implements IResources {
+public class AppResources implements IResources {
 
-    private static final LoggerPlus LOGGER_PLUS = new LoggerPlus(LoggerFactory.getLogger(PersonResources.class));
+    private static final LoggerPlus LOGGER_PLUS = new LoggerPlus(LoggerFactory.getLogger(AppResources.class));
 
     /**
-     * The resource name for Person.
+     * The resource name for Application.
      */
-    public static final String RESOURCE_NAME = "Person";
+    public static final String RESOURCE_NAME = "Application";
 
     final private Set<IResource> resources;
 
     /**
-     * Creates an instance of PersonResources.
+     * Creates an instance of AppResources.
      * @param resources An set of unique implementation of IResource.
      */
     @Inject
-    public PersonResources(@Named(RESOURCE_NAME) final Set<IResource> resources) {
+    public AppResources(@Named(RESOURCE_NAME) final Set<IResource> resources) {
         this.resources = resources;
     }
 
@@ -55,8 +55,8 @@ public class PersonResources implements IResources {
      */
     public static Optional<IResource> createResource(SimpleHttpExchange exchange) {
         try(var mLOG = LOGGER_PLUS.groupLog("Optional<IResource> getInstance(SimpleHttpExchange)")) {
-            final var personResource = PersonModule.getInstance(IResources.class);
-            final var resources = personResource.getResources();
+            final var appResources = AppModule.getInstance(IResources.class);
+            final var resources = appResources.getResources();
             final var resource = resources.stream().filter(___resource -> ___resource.canProcess(exchange)).findFirst();
             mLOG.debug(()-> "Resource instance: " + resource.get());
             return resource;
