@@ -6,6 +6,7 @@ plugins {
     id 'org.beryx.jlink' version '2.25.0'
     id 'jacoco'
     id 'pmd'
+    id "io.snyk.gradle.plugin.snykplugin" version "0.4"
 }
 
 group 'xyz.ronella.tester'
@@ -150,3 +151,10 @@ pmd {
 }
 
 pmdTest.enabled = false
+
+snyk {
+    arguments = '--all-sub-projects'
+    severity = 'low'
+    autoDownload = true
+    autoUpdate = true
+}
