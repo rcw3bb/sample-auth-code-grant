@@ -27,23 +27,20 @@ gradlew jlink
 The output of this task will be in the following directory format:
 
 ```
-build\java-api-server-<VERSION>
+build\auth-code-grant-<VERSION>
 ```
 
 From the preceding directory you can test the build by running the following batch file:
 
 ```
-java-api-server.bat
+auth-code-grant.bat
 ```
 
-Once started you can try to open the following address in your browser:
-
-http://localhost:8080/person
-
-Expect the following response:
+Expect the following in console:
 
 ```json
-[{"id":1,"firstName":"Ronaldo","lastName":"Webb"},{"id":2,"firstName":"Juan","lastName":"Dela Cruz"}]
+The app started on port 9010
+Press enter to stop...
 ```
 
 ## Packaging
