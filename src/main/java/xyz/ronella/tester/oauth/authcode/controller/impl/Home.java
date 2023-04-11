@@ -38,8 +38,9 @@ public class Home extends AbstractAppResource {
         simpleExchange.sendResponseText(ResponseStatus.OK, "This is a protected page.");
     }
 
+
     @Override
     public String getPathPattern() {
-        return String.format("^%s/home", getBaseURL());
+        return String.format("^%s/", getBaseURL());
     }
 }
