@@ -29,7 +29,7 @@ public class Application {
 
             server.start();
 
-            mLOG.info("\nThe app started on port " + port + "\nPress any key to stop...\n");
+            mLOG.info("\nThe app started on port " + port + "\nPress enter to stop...\n");
             System.in.read();
 
             server.stop();
