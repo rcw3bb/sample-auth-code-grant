@@ -1,4 +1,4 @@
-package xyz.ronella.tester.oauth.authcode.commons;
+package xyz.ronella.sample.oauth.authcode.commons;
 
 import java.util.Arrays;
 import java.util.Optional;

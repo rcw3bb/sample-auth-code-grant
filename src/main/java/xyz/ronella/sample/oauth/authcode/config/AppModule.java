@@ -1,4 +1,4 @@
-package xyz.ronella.tester.oauth.authcode.config;
+package xyz.ronella.sample.oauth.authcode.config;
 
 import com.google.inject.AbstractModule;
 
@@ -8,9 +8,9 @@ import com.google.inject.Key;
 import com.google.inject.multibindings.Multibinder;
 import com.google.inject.name.Names;
 
-import xyz.ronella.tester.oauth.authcode.controller.impl.*;
-import xyz.ronella.tester.oauth.authcode.controller.IResource;
-import xyz.ronella.tester.oauth.authcode.controller.IResources;
+import xyz.ronella.sample.oauth.authcode.controller.impl.*;
+import xyz.ronella.sample.oauth.authcode.controller.IResource;
+import xyz.ronella.sample.oauth.authcode.controller.IResources;
 
 /**
  * The configuration to wiring all application related resources.

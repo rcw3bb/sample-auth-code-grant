@@ -1,12 +1,12 @@
-package xyz.ronella.tester.oauth.authcode.wrapper;
+package xyz.ronella.sample.oauth.authcode.wrapper;
 
 import com.sun.net.httpserver.HttpExchange;
 
 import org.slf4j.LoggerFactory;
 import xyz.ronella.logging.LoggerPlus;
-import xyz.ronella.tester.oauth.authcode.commons.ContentType;
-import xyz.ronella.tester.oauth.authcode.commons.Method;
-import xyz.ronella.tester.oauth.authcode.commons.ResponseStatus;
+import xyz.ronella.sample.oauth.authcode.commons.ContentType;
+import xyz.ronella.sample.oauth.authcode.commons.Method;
+import xyz.ronella.sample.oauth.authcode.commons.ResponseStatus;
 import xyz.ronella.trivial.handy.RegExMatcher;
 
 import java.io.BufferedReader;

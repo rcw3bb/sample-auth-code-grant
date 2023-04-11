@@ -1,4 +1,4 @@
-package xyz.ronella.tester.oauth.authcode.commons;
+package xyz.ronella.sample.oauth.authcode.commons;
 
 public enum ResponseStatus {
     CONTINUE(100),

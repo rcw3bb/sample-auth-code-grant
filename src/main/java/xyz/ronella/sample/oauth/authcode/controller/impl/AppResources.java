@@ -1,14 +1,14 @@
-package xyz.ronella.tester.oauth.authcode.controller.impl;
+package xyz.ronella.sample.oauth.authcode.controller.impl;
 
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import org.slf4j.LoggerFactory;
 import xyz.ronella.logging.LoggerPlus;
-import xyz.ronella.tester.oauth.authcode.config.AppModule;
-import xyz.ronella.tester.oauth.authcode.controller.IResource;
-import xyz.ronella.tester.oauth.authcode.controller.IResources;
-import xyz.ronella.tester.oauth.authcode.wrapper.SimpleHttpExchange;
+import xyz.ronella.sample.oauth.authcode.config.AppModule;
+import xyz.ronella.sample.oauth.authcode.controller.IResource;
+import xyz.ronella.sample.oauth.authcode.controller.IResources;
+import xyz.ronella.sample.oauth.authcode.wrapper.SimpleHttpExchange;
 
 import java.util.Optional;
 import java.util.Set;

@@ -41,7 +41,7 @@ dependencies {
 
 application {
     mainModule = moduleName
-    mainClass = 'xyz.ronella.tester.oauth.authcode.Application'
+    mainClass = 'xyz.ronella.sample.oauth.authcode.Application'
 }
 
 java {

@@ -1,4 +1,4 @@
-package xyz.ronella.tester.oauth.authcode.config;
+package xyz.ronella.sample.oauth.authcode.config;
 
 import org.slf4j.LoggerFactory;
 import xyz.ronella.logging.LoggerPlus;

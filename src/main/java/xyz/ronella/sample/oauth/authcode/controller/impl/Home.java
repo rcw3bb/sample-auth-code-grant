@@ -1,8 +1,8 @@
-package xyz.ronella.tester.oauth.authcode.controller.impl;
+package xyz.ronella.sample.oauth.authcode.controller.impl;
 
-import xyz.ronella.tester.oauth.authcode.commons.Constant;
-import xyz.ronella.tester.oauth.authcode.commons.ResponseStatus;
-import xyz.ronella.tester.oauth.authcode.wrapper.SimpleHttpExchange;
+import xyz.ronella.sample.oauth.authcode.commons.Constant;
+import xyz.ronella.sample.oauth.authcode.commons.ResponseStatus;
+import xyz.ronella.sample.oauth.authcode.wrapper.SimpleHttpExchange;
 
 /**
  * The home page of the protected resource.

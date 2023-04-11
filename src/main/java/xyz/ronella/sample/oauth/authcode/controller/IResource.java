@@ -1,6 +1,6 @@
-package xyz.ronella.tester.oauth.authcode.controller;
+package xyz.ronella.sample.oauth.authcode.controller;
 
-import xyz.ronella.tester.oauth.authcode.wrapper.SimpleHttpExchange;
+import xyz.ronella.sample.oauth.authcode.wrapper.SimpleHttpExchange;
 
 /**
  * Must be implemented to process a path resource.

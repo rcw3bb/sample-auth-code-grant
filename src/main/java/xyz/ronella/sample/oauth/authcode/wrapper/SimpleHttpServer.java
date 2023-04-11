@@ -1,10 +1,10 @@
-package xyz.ronella.tester.oauth.authcode.wrapper;
+package xyz.ronella.sample.oauth.authcode.wrapper;
 
 import com.sun.net.httpserver.HttpServer;
 
-import xyz.ronella.tester.oauth.authcode.commons.ResponseStatus;
-import xyz.ronella.tester.oauth.authcode.config.AppConfig;
-import xyz.ronella.tester.oauth.authcode.controller.impl.AppResources;
+import xyz.ronella.sample.oauth.authcode.commons.ResponseStatus;
+import xyz.ronella.sample.oauth.authcode.config.AppConfig;
+import xyz.ronella.sample.oauth.authcode.controller.impl.AppResources;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

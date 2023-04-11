@@ -1,4 +1,4 @@
-package xyz.ronella.tester.oauth.authcode.wrapper;
+package xyz.ronella.sample.oauth.authcode.wrapper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

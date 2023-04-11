@@ -1,9 +1,9 @@
-package xyz.ronella.tester.oauth.authcode;
+package xyz.ronella.sample.oauth.authcode;
 
 import org.slf4j.LoggerFactory;
 import xyz.ronella.logging.LoggerPlus;
-import xyz.ronella.tester.oauth.authcode.config.AppConfig;
-import xyz.ronella.tester.oauth.authcode.wrapper.SimpleHttpServer;
+import xyz.ronella.sample.oauth.authcode.config.AppConfig;
+import xyz.ronella.sample.oauth.authcode.wrapper.SimpleHttpServer;
 
 import java.io.IOException;
 

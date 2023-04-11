@@ -1,12 +1,12 @@
-package xyz.ronella.tester.oauth.authcode.controller.impl;
+package xyz.ronella.sample.oauth.authcode.controller.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import xyz.ronella.tester.oauth.authcode.commons.Constant;
-import xyz.ronella.tester.oauth.authcode.commons.HttpCookieWrapper;
-import xyz.ronella.tester.oauth.authcode.config.AppConfig;
-import xyz.ronella.tester.oauth.authcode.controller.IResource;
-import xyz.ronella.tester.oauth.authcode.wrapper.SimpleHttpExchange;
+import xyz.ronella.sample.oauth.authcode.commons.HttpCookieWrapper;
+import xyz.ronella.sample.oauth.authcode.config.AppConfig;
+import xyz.ronella.sample.oauth.authcode.commons.Constant;
+import xyz.ronella.sample.oauth.authcode.controller.IResource;
+import xyz.ronella.sample.oauth.authcode.wrapper.SimpleHttpExchange;
 import xyz.ronella.trivial.handy.RegExMatcher;
 import java.net.HttpCookie;
 import java.util.regex.Matcher;

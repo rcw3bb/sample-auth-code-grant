@@ -1,4 +1,4 @@
-package xyz.ronella.tester.oauth.authcode.controller;
+package xyz.ronella.sample.oauth.authcode.controller;
 
 import java.util.Set;
 

@@ -4,7 +4,7 @@
  * @author Ron Webb
  * @since 1.0.0
  */
-open module xyz.ronella.tester.oauth.authcode {
+open module xyz.ronella.sample.oauth.authcode {
     requires static lombok;
     requires java.net.http;
 
@@ -18,5 +18,4 @@ open module xyz.ronella.tester.oauth.authcode {
     requires com.google.gson;
     requires org.slf4j;
     requires org.apache.logging.log4j;
-
 }
