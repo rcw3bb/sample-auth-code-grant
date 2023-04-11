@@ -79,12 +79,12 @@ public abstract class AbstractAppResource implements IResource {
         final var sessionState = tokenJson.get("session_state").getAsString();
 
         //Access token is the only possible token to be in browser cookies.
-        final var accessTokenCookie = createCookie(Constant.COOKIE_ACCESS_TOKEN, accessToken, expiresIn);
+        final var accessTokenCookie = createCookie(Constant.ACCESS_TOKEN, accessToken, expiresIn);
 
         //Just for this sample we are storing refresh token and session state in browser cookies for simplicity.
         //For actual usage these should be persisted somewhere (e.g. database).
-        final var refreshTokenCookie = createCookie(Constant.COOKIE_REFRESH_TOKEN, refreshToken, refresh_expires_in);
-        final var sessionStateCookie = createCookie(Constant.COOKIE_SESSION_STATE, sessionState, refresh_expires_in);
+        final var refreshTokenCookie = createCookie(Constant.REFRESH_TOKEN, refreshToken, refresh_expires_in);
+        final var sessionStateCookie = createCookie(Constant.SESSION_STATE, sessionState, refresh_expires_in);
 
         simpleExchange.redirect(Constant.URL_HOME, sessionStateCookie, accessTokenCookie, refreshTokenCookie);
     }

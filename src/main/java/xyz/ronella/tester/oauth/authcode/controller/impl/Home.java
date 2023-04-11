@@ -13,7 +13,7 @@ public class Home extends AbstractAppResource {
 
     @Override
     public void process(SimpleHttpExchange simpleExchange) {
-        final var accessTokenCookie = simpleExchange.getCookie(Constant.COOKIE_ACCESS_TOKEN);
+        final var accessTokenCookie = simpleExchange.getCookie(Constant.ACCESS_TOKEN);
 
         if (accessTokenCookie.isEmpty()) {
             simpleExchange.redirect(Constant.URL_REFRESH);
@@ -23,9 +23,9 @@ public class Home extends AbstractAppResource {
             //It is necessary to test the value of sessionState before forwarding to home page logic.
             //If the sessionState is not the expected value redirect it entry page.
             //However, for this sample we will only check for its existence for simplicity.
-            final var sessionStateCookie = simpleExchange.getCookie(Constant.COOKIE_SESSION_STATE);
+            final var sessionState = simpleExchange.getCookie(Constant.SESSION_STATE);
 
-            if (sessionStateCookie.isPresent()) {
+            if (sessionState.isPresent()) {
                 homePage(simpleExchange);
             }
             else {

@@ -5,7 +5,7 @@ plugins {
     id 'org.javamodularity.moduleplugin' version '1.8.12'
     id 'org.beryx.jlink' version '2.25.0'
     id 'jacoco'
-    //id 'pmd'
+    id 'pmd'
 }
 
 group 'xyz.ronella.tester'
@@ -68,7 +68,7 @@ jlink {
 }
 
 test {
-    //dependsOn(pmdMain)
+    dependsOn(pmdMain)
     finalizedBy(jacocoTestReport)
     useJUnitPlatform()
 }
@@ -141,12 +141,12 @@ javadoc {
     }
 }
 
-/*pmd {
+pmd {
     consoleOutput = true
     toolVersion = "6.51.0"
     rulesMinimumPriority = 5
     ruleSetFiles = files('quality/pmd/java/custom.xml')
     ruleSets = []
-}*/
+}
 
-//pmdTest.enabled = false
+pmdTest.enabled = false

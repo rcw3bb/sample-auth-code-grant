@@ -41,15 +41,15 @@ public class Refresh extends AbstractAppResource {
 
     @Override
     public void process(SimpleHttpExchange simpleExchange) {
-        final var refreshTokenCookie = simpleExchange.getCookie(Constant.COOKIE_REFRESH_TOKEN);
+        final var refreshToken = simpleExchange.getCookie(Constant.REFRESH_TOKEN);
 
-        if (refreshTokenCookie.isPresent()) {
+        if (refreshToken.isPresent()) {
             final var tokenEndpoint = AppConfig.INSTANCE.getTokenURL();
 
             final var request = HttpRequest.newBuilder()
                     .uri(URI.create(tokenEndpoint))
                     .header("Content-Type", "application/x-www-form-urlencoded")
-                    .POST(HttpRequest.BodyPublishers.ofString(createRequestBody(refreshTokenCookie.get().getValue())))
+                    .POST(HttpRequest.BodyPublishers.ofString(createRequestBody(refreshToken.get().getValue())))
                     .build();
             try {
                 final var client = HttpClient.newHttpClient();

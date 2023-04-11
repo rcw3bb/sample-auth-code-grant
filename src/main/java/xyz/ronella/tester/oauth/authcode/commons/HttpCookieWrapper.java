@@ -2,6 +2,7 @@ package xyz.ronella.tester.oauth.authcode.commons;
 
 import xyz.ronella.trivial.decorator.StringBuilderAppender;
 
+import java.io.Serial;
 import java.net.HttpCookie;
 
 /**
@@ -10,7 +11,9 @@ import java.net.HttpCookie;
  * @author Ron Webb
  */
 public class HttpCookieWrapper {
-    private final HttpCookie httpCookie;
+    @Serial
+    private static final long serialVersionUID = -4125926599943680474L;
+    private transient final HttpCookie httpCookie;
 
     public HttpCookieWrapper(final HttpCookie httpCookie) {
         this.httpCookie = httpCookie;

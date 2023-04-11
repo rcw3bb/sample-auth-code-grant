@@ -13,8 +13,8 @@ public interface Constant {
     String URL_ENTRY = "/entry";
     String URL_HOME = "/";
     String URL_REFRESH = "/refresh";
-    String COOKIE_ACCESS_TOKEN = "ACCESS_TOKEN";
-    String COOKIE_REFRESH_TOKEN = "SAMPLE_REFRESH_TOKEN";
-    String COOKIE_SESSION_STATE = "SAMPLE_SESSION_STATE";
+    String ACCESS_TOKEN = "ACCESS_TOKEN";
+    String REFRESH_TOKEN = "SAMPLE_REFRESH_TOKEN";
+    String SESSION_STATE = "SAMPLE_SESSION_STATE";
 
 }
