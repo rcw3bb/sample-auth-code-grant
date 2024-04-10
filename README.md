@@ -1,6 +1,19 @@
 # OAuth2 Authorization Code Grant Sample Implementation
 
-This is a sample implementation of authorization code grant with java. The IDAM use is keycloak. 
+This is a sample implementation of authorization code grant with java. 
+
+- Involves the user directly.
+- User logs in to the authorization server *(e.g., Google, Facebook, Keycloak)* and grants permission to the client application to access their data.
+- More secure as the client application never gets the user's credentials.
+
+Here's a simplified breakdown:
+
+1. User attempts to access a resource on your application.
+2. Your application redirects the user to the authorization server's login page.
+3. User logs in and grants permission to your application.
+4. Authorization server redirects the user back to your application with an authorization code.
+5. Your application exchanges the authorization code for an access token from the authorization server (using your client credentials).
+6. Your application uses the access token to access the user's data on the resource server.
 
 For simplicity all the tokens *(i.e. access and refresh tokens)* and session state are all stored as browser cookies, which is not ideal. I recommend that in the actual implementation only the access token is available in browser cookie if possible and both the refresh token and the session state must be persisted to somewhere only the application knows about *(e.g. database or file)*.
 
